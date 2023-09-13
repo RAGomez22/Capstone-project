@@ -28,7 +28,7 @@ export default function GetInventory () {
             {inventory.length > 0 && (
                 <ul className="Inventory">
                     {inventory.map((item) => (
-                        <li className ="Inventory" key={item.id} > <a> <img src={item.image} /> Title: {item.title} </a> </li>
+                        <li className ="Inventory" key={item.id} > <a href=''> <img src={item.image} /> Title: {item.title} </a> </li>
                       
 
                     ))}

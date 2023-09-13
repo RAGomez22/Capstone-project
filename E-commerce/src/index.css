@@ -36,7 +36,11 @@ li.Inventory a {
   float: left;
 }
 li.Inventory a img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   width: 25%;
+  padding-bottom: 1rem;
   border-radius: 8px;
 
 }
