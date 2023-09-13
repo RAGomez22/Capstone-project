@@ -18,18 +18,23 @@ export default function GetInventory () {
         fetchData()
       },[]);
     //p tag spaces list out better than list tag 
+    // could make li data a tags so they can be split better rather than 
+    //drop down style
+    //would linking a tags allow me to go to an individual item page based on the item clicked
     return (
     <div>
         <h2>hi</h2>
         <div>
             {inventory.length > 0 && (
                 <ul className="Inventory">
-                    {inventory.map(inventory => (
-                        <p key={inventory.id} className ="Inventory"> {inventory.title}</p>
+                    {inventory.map((item) => (
+                        <li className ="Inventory" key={item.id} > <a> <img src={item.image} /> Title: {item.title} </a> </li>
+                      
+
                     ))}
                 </ul>
             )}
         </div>
     </div>
-)
+    );
 }

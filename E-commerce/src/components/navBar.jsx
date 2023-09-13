@@ -2,10 +2,10 @@ export default function NavBar(){
     return(
         <nav>
             <ul className="Nav">
-                <li> <a>Cart</a> </li>
-                <li> <a>Sign In</a> </li>
-                <li> <a>Food</a> </li>
-                <li> <a>Pharmacy</a> </li>
+                <li className="nav1"> <a>Cart</a> </li>
+                <li className="nav1"> <a>Sign In</a> </li>
+                <li className="nav1">  <a>Food</a> </li>
+                <li className="nav1"> <a>Pharmacy</a> </li>
                 
     
             </ul>

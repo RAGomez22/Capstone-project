@@ -4,30 +4,30 @@ ul.Nav{
   padding: 0;
   overflow: hidden;
   background-color: #B4BAD4;
-  ;
 }
-li{
+
+li.nav1{
   float: right;
 }
-li a{
+li.nav1 a{
   display: block;
   color: black;
   text-align: center;
-  padding: 14px 16px;
+  padding: 20px 16px;
   text-decoration: none;
 }
-li a:hover{
+li.nav1 a:hover{
   background-color: #5c84e9;
 }
 ul.Inventory{
-  
+  list-style-type: none;
   margin: 1rem;
   padding: 1rem;
   overflow: hidden;
   background-color: #B4BAD4;
-  ;
+  
 }
-li.Inventory{
+li.Inventory a {
   display: block;
   color: black;
   text-align: center;
@@ -35,7 +35,12 @@ li.Inventory{
   text-decoration: none;
   float: left;
 }
-li.Inventory a{
-  
+li.Inventory a img{
+  width: 25%;
+  border-radius: 8px;
+
+}
+li.Inventory a:hover{
+  background-color: #5c84e9;
 }
 
