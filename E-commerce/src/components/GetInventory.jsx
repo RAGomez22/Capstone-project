@@ -1,4 +1,7 @@
 import React, {useEffect, useState} from "react"
+import ProductDetails from "../pages/ProductDetails"
+import { Link } from 'react-router-dom';
+
 export default function GetInventory () {
 //usestate set to array 
     const [inventory, setInventory] = useState([])
@@ -28,8 +31,8 @@ export default function GetInventory () {
             {inventory.length > 0 && (
                 <ul className="Inventory">
                     {inventory.map((item) => (
-                        <li className ="Inventory" key={item.id} > <a href=''> <img src={item.image} /> Title: {item.title} </a> </li>
-                      
+                        <li className ="Inventory" key={item.id} > <a> <Link to ={`${item.id}`}> {item.name} <img src={item.image} /> Title: {item.title} </Link></a> </li>
+                        
 
                     ))}
                 </ul>
