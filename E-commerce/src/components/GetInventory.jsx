@@ -14,10 +14,6 @@ export default function GetInventory () {
         }
         fetchData();
       },[]);
-    //p tag spaces list out better than list tag 
-    // could make li data a tags so they can be split better rather than 
-    //drop down style
-    //would linking a tags allow me to go to an individual item page based on the item clicked
     return (
     <div>
         <div >
@@ -29,9 +25,10 @@ export default function GetInventory () {
                         <Link to ={`/product/${id}`}>  
                             <div>
                                 <img src={image} className='_image'/> 
-                                <p>Title: {title}  </p> 
+                                <p> {title} </p> 
                             </div>     
                         </Link>
+                        <button className="">Add to Cart</button>
                     </li>
                     ))}
                 </ul>

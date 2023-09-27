@@ -25,21 +25,25 @@ export default function ProductDetails (){
         <div className="Inventory2">
             <div className="sec1">
                 <h2>{title}</h2>
-                <img src={image} alt={title} style={{ maxWidth: "100%" }}/>
+                <img src={image} alt={title} style={{ maxWidth: "450px" }} className="image"/>
+
+                <button style={{ maxWidth: "100px" }}> Add to Cart</button>
             </div>
 
             <div className="sec2">
                 <p>{description}</p>
-                <p>Price: ${price}</p>
-            </div>
-        
-            <div className="sec3">
+                <p className="price">Price: ${price}</p>
                 {/* a conditional is used to prevent a runtime error */}
                 {rating &&
-                 <div> Rating: {rating.rate} ⭐</div>
+                 <div className="rate"> Rating: {rating.rate}/5 ⭐ </div>
                  }
+                 {rating &&
+                 <div className="rate">  {rating.count} ratings</div>
+                 }
+                </div>
+        
+            
                 
-            </div>
     
         </div>
     )

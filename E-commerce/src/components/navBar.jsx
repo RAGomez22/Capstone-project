@@ -11,10 +11,8 @@ export default function NavBar(){
     </div>
         <nav>
             <ul className="Nav">
+                <li className="nav1"> <Link to="/">Home</Link> </li>
                 <li className="nav1"> <a>Cart</a> </li>
-                <li className="nav1"> <a>Sign In</a> </li>
-                <li className="nav1">  <a>Food</a> </li>
-                <li className="nav1"> <a>Pharmacy</a> </li>
             </ul>
         </nav>
     </div>

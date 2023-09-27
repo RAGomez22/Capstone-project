@@ -10,7 +10,9 @@
 }
 .BrandName{
     padding-top: 2rem;
-
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.75rem;
+    font-style: bold;
 }
 .Nav{
     list-style: none;
@@ -22,6 +24,7 @@
 }
 .nav1{
     padding-left: 1rem; 
+    font-size: 1.25rem;
 }
 .Nav 
 a{
