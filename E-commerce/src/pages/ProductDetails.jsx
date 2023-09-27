@@ -1,36 +1,31 @@
 import React from "react";
 import { useState,useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { fetchProductDetails } from "../components/API";
 
-export default function ProductDetails (a){
+export default function ProductDetails (){
 
-    const index = a; 
+    const {id} = useParams(); 
 
-    const [ProductDetails,SetProductDetails]=useState([]);
+    const [productDetails,setProductDetails]=useState([]);
 
-    const fetchData = ()=> {
-        fetch (`https://fakestoreapi.com/products/${index}`)
-        .then(response => {
-            return (response.json() )})
-        .then(data =>{
-            SetProductDetails(data)
-        })
-    
-    } 
-    useEffect (()=> {
-        fetchData()
-    },[]);
+    useEffect(()=>{
+        async function fetchData(){
+            const productDetails= await fetchProductDetails(id); 
+            console.log(productDetails);
+            setProductDetails(productDetails);
+        }
+        fetchData();
+      },[id]);
 
+      const {title, price, description}=productDetails;
     return (
+        
         <div>
-            {ProductDetails.length > 0 && (
-                <ul className="Inventory">
-                    {ProductDetails.map((item) => (
-                        <li className ="Inventory" key={item.id} > <a href=''> <img src={item.image} /> Title: {item.title} </a> </li>
-                      
-
-                    ))}
-                </ul>
-            )}
+            <h2>{title}</h2>
+            <p>{description}</p>
+            <p>Price: ${price}</p>
+    
         </div>
     )
     

@@ -5,13 +5,13 @@ import NavBar from './components/navBar.jsx';
 import Home from './pages/homepage';
 import ProductDetails from './pages/ProductDetails';
 function App() {
-
+  const [product,setProduct]=useState();
   return (
     <div>
       <NavBar/>
       <Routes>
-        <Route path="/" element ={<Home/>} />
-        <Route path= "/1" element ={<ProductDetails/>}/>
+        <Route path="/" element ={<Home />} />
+        <Route path= "/product/:id" element ={<ProductDetails />}/>
       </Routes>
     </div>
   )

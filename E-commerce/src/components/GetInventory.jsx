@@ -26,11 +26,15 @@ export default function GetInventory () {
             {inventory.length > 0 && (
                 <ul className="Inventory">
                     {inventory.map(({id,image,title}) => (
-                        <li className ="Inventory" key={id} > 
-                            <a> <Link to ={`${id}`}> <img src={image} /> Title: {title} </Link></a> 
-                        </li>
-                        
-
+                
+                      <li className ="Inventory" key={id} > 
+                        <Link to ={`/product/${id}`}>  
+                            <div>
+                                <img src={image} /> 
+                                <p>Title: {title}  </p> 
+                            </div>     
+                        </Link>
+                    </li>
                     ))}
                 </ul>
             )}

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 export default function NavBar(){
     return(
+    <>
+        <h1>Store</h1>
         <nav>
             <ul className="Nav">
                 <li className="nav1"> <a>Cart</a> </li>
@@ -9,6 +11,7 @@ export default function NavBar(){
                 <li className="nav1"> <a>Pharmacy</a> </li>
             </ul>
         </nav>
+    </>
     )
 }
 //Sign In Should have a terneary component that if user is logged in, 

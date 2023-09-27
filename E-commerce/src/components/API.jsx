@@ -10,6 +10,18 @@ export const fetchInventory = async()=>{
         return products;
 
     }catch(error){
-        console.log(ErrorResponse)
+        console.log(ErrorResponse);
+    }
+}
+
+export const fetchProductDetails = async(id)=>{
+    try{
+        const response= await fetch(`${Base_URL}/${id}`)
+        const product = await response.json();
+        console.log(product);
+        return product; 
+    }
+    catch(error){
+        console.log(error);
     }
 }
