@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react"
 import ProductDetails from "../pages/ProductDetails"
+import { fetchInventory } from "./API";
 import { Link } from 'react-router-dom';
 
 export default function GetInventory () {
@@ -7,18 +8,12 @@ export default function GetInventory () {
     const [inventory, setInventory] = useState([])
 
     //api route isn't defined so inventory is used to pull out information 
-
-    const fetchData = () =>{
-        fetch('https://fakestoreapi.com/products')
-        .then(response => {
-            return response.json()
-          })
-          .then(data => {
-            setInventory(data)
-          })
-      }
-      useEffect(()=>{
-        fetchData()
+    useEffect(()=>{
+        async function fetchData(){
+            const inventory= await fetchInventory(); 
+            setInventory(inventory);
+        }
+        fetchData();
       },[]);
     //p tag spaces list out better than list tag 
     // could make li data a tags so they can be split better rather than 
@@ -30,8 +25,10 @@ export default function GetInventory () {
         <div>
             {inventory.length > 0 && (
                 <ul className="Inventory">
-                    {inventory.map((item) => (
-                        <li className ="Inventory" key={item.id} > <a> <Link to ={`${item.id}`}> {item.name} <img src={item.image} /> Title: {item.title} </Link></a> </li>
+                    {inventory.map(({id,image,title}) => (
+                        <li className ="Inventory" key={id} > 
+                            <a> <Link to ={`${id}`}> <img src={image} /> Title: {title} </Link></a> 
+                        </li>
                         
 
                     ))}
