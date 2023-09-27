@@ -1,0 +1,17 @@
+.Nav{
+    list-style: none;
+    display: flex;
+    justify-content: Right;
+    background-color: #B4BAD4;
+    padding: 10px;
+}
+.nav1{
+    padding-left: 1rem; 
+}
+.Nav 
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: blue;
+}

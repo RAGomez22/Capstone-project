@@ -2,6 +2,7 @@ import React from "react";
 import { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchProductDetails } from "../components/API";
+import "../css_styling/productDetails.css"
 
 export default function ProductDetails (){
 
@@ -21,12 +22,12 @@ export default function ProductDetails (){
       const {title,image, price, description, rating }=productDetails;
     return (
 
-        <div>
+        <div className="Inventory2">
             <div className="sec1">
                 <h2>{title}</h2>
-                <img src={image}/>
+                <img src={image} alt={title} style={{ maxWidth: "100%" }}/>
             </div>
-            
+
             <div className="sec2">
                 <p>{description}</p>
                 <p>Price: ${price}</p>
@@ -34,7 +35,9 @@ export default function ProductDetails (){
         
             <div className="sec3">
                 {/* a conditional is used to prevent a runtime error */}
-                {rating && <p> Rating: {rating.rate} ⭐</p>}
+                {rating &&
+                 <div> Rating: {rating.rate} ⭐</div>
+                 }
                 
             </div>
     

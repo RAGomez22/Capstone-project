@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import { fetchInventory } from "./API";
 import { Link } from 'react-router-dom';
-import "./GetInventoryStyling.css";
+import "../css_styling/GetInventoryStyling.css";
 export default function GetInventory () {
 //usestate set to array 
     const [inventory, setInventory] = useState([])

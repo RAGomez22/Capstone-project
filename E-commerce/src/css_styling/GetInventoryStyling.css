@@ -3,11 +3,11 @@
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust the width as needed */
     grid-gap: 20px; /* Adjust the gap between items as needed */
     list-style: none; /* Remove default list styles */
-    padding: 1; /* Remove any default padding */
+    padding: 1rem; /* Remove any default padding */
   }
   
   .Inventory li {
-    background-color: #f9f9f9; /* Optional: Add background color to list items */
+    background-color: #f9f9f9; 
     border: 1px solid #ddd; /* Optional: Add borders to list items */
     padding: 10px; /* Optional: Add padding to list items */
     overflow: hidden;
@@ -17,5 +17,12 @@
   .Inventory li ._image {
     max-width: 100%; /* Optional: Ensure images don't exceed their container */
     height: auto;
+  }
+  a{
+    text-decoration: none;
+  }
+  a:hover{
+    text-decoration: none;
+    color:antiquewhite;
   }
   
