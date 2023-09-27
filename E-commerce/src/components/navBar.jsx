@@ -3,7 +3,12 @@ import "../css_styling/navBar.css"
 export default function NavBar(){
     return(
     <>
-        <h1>Store</h1>
+    <div className="H1">
+
+    <div className="header">
+        <img className="logo" src="../business-data-global-svgrepo-com.png"/>
+        <h1 className="BrandName">GoMart Universal   </h1>
+    </div>
         <nav>
             <ul className="Nav">
                 <li className="nav1"> <a>Cart</a> </li>
@@ -12,6 +17,7 @@ export default function NavBar(){
                 <li className="nav1"> <a>Pharmacy</a> </li>
             </ul>
         </nav>
+    </div>
     </>
     )
 }

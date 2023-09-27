@@ -1,8 +1,23 @@
+.H1{
+    background-color: #B4BAD4;
+}
+.header{
+    display: inline-flex;
+    width:100%;
+}
+.logo{
+    max-width: 100px;
+}
+.BrandName{
+    padding-top: 2rem;
+
+}
 .Nav{
     list-style: none;
     display: flex;
     justify-content: Right;
     background-color: #B4BAD4;
+    margin:0;
     padding: 10px;
 }
 .nav1{
