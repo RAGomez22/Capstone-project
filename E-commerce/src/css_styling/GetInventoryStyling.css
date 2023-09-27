@@ -10,12 +10,12 @@
     background-color: #f9f9f9; 
     border: 1px solid #ddd; /* Optional: Add borders to list items */
     border-radius: 10px;
-    padding: 10px; /* Optional: Add padding to list items */
+    padding: 10px; 
     overflow: hidden;
-    margin: 10px; /* Stack elements vertically */
+    margin: 10px; 
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center horizontally */
+    flex-direction: column; 
+    align-items: center; 
     justify-content: space-between; 
   
     height: 1; /* Ensure the card takes the full height */
