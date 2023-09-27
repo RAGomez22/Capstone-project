@@ -1,3 +1,19 @@
+*{
+  margin:0;
+  padding:0;
+}
+.Inventory{
+  display: grid;
+  grid-template-columns: repeat(auto-dit,
+  minmax(12rem,16rem));
+  gap:2rem;
+  justify-content: center;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+}
 ul.Nav{
   list-style-type:none;
   margin: 0;

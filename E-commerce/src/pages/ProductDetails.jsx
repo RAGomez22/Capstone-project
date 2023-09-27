@@ -18,13 +18,25 @@ export default function ProductDetails (){
         fetchData();
       },[id]);
 
-      const {title, price, description}=productDetails;
+      const {title,image, price, description, rating }=productDetails;
     return (
-        
+
         <div>
-            <h2>{title}</h2>
-            <p>{description}</p>
-            <p>Price: ${price}</p>
+            <div className="sec1">
+                <h2>{title}</h2>
+                <img src={image}/>
+            </div>
+            
+            <div className="sec2">
+                <p>{description}</p>
+                <p>Price: ${price}</p>
+            </div>
+        
+            <div className="sec3">
+                {/* a conditional is used to prevent a runtime error */}
+                {rating && <p> Rating: {rating.rate} ⭐</p>}
+                
+            </div>
     
         </div>
     )

@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react"
-import ProductDetails from "../pages/ProductDetails"
 import { fetchInventory } from "./API";
 import { Link } from 'react-router-dom';
-
+import "./GetInventoryStyling.css";
 export default function GetInventory () {
 //usestate set to array 
     const [inventory, setInventory] = useState([])
@@ -21,8 +20,7 @@ export default function GetInventory () {
     //would linking a tags allow me to go to an individual item page based on the item clicked
     return (
     <div>
-        <h2>hi</h2>
-        <div>
+        <div >
             {inventory.length > 0 && (
                 <ul className="Inventory">
                     {inventory.map(({id,image,title}) => (
@@ -30,7 +28,7 @@ export default function GetInventory () {
                       <li className ="Inventory" key={id} > 
                         <Link to ={`/product/${id}`}>  
                             <div>
-                                <img src={image} /> 
+                                <img src={image} className='_image'/> 
                                 <p>Title: {title}  </p> 
                             </div>     
                         </Link>

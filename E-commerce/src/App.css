@@ -1,0 +1,15 @@
+.sec1{
+    display: inline-block;
+    justify-content: left;
+    width: 40%;
+    padding-left: 1rem;
+    
+}
+.sec1 img{
+    width: 250px;
+}
+.sec2{
+    display: inline-block;
+    justify-content: center;
+    width: 40%;
+}
