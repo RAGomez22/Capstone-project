@@ -2,11 +2,13 @@ import React, {useEffect, useState} from "react"
 import { fetchInventory } from "./API";
 import { Link } from 'react-router-dom';
 import "../css_styling/GetInventoryStyling.css";
-export default function GetInventory () {
+export default function GetInventory ({cart,setCart}) {
 //usestate set to array 
     const [inventory, setInventory] = useState([])
 
-    //api route isn't defined so inventory is used to pull out information 
+    //api route isn't defined so inventory is used to pull out information
+    
+    
     useEffect(()=>{
         async function fetchData(){
             const inventory= await fetchInventory(); 
@@ -14,6 +16,14 @@ export default function GetInventory () {
         }
         fetchData();
       },[]);
+
+      function addToCart(item){
+        const cartItem={
+            ...item, 
+            quantity: 1
+        }
+        setCart({...cartItem,cartItem})
+      }
     return (
     <div>
         <div >

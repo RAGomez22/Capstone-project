@@ -1,5 +1,6 @@
 .H1{
-    background-color: #B4BAD4;
+    background-color: #5c84e9;
+    
 }
 .header{
     display: inline-flex;
@@ -18,7 +19,7 @@
     list-style: none;
     display: flex;
     justify-content: Right;
-    background-color: #B4BAD4;
+    background-color: #5c84e9;
     margin:0;
     padding: 10px;
 }

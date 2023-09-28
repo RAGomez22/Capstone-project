@@ -1,0 +1,45 @@
+fieldset{
+    text-align: center;
+}
+.PageTitle{
+    text-align: center;
+    text-decoration: underline;
+    font-size: 2rem;
+    background-color: #B4BAD4; 
+}
+body{
+    background-color: #B4BAD4; 
+
+}
+label{
+    display: flex;
+    justify-content: center;
+    padding-top: .25rem;
+}
+
+input{
+    margin: 10px 0 0 0;
+    width:50%;
+    padding: 1rem;
+}
+::placeholder{
+    text-align: center;
+    font-size: 1.25rem;
+}
+button {
+    margin: 10px 0 0 0;
+    width:50%;
+}
+button .login_B{
+    border-color: black;
+    border-style: solid;
+}
+
+form{
+    background-color: #B4BAD4;
+    padding: 2rem;
+}
+fieldset{
+    border-style: none;
+    padding-top: 10px;
+}

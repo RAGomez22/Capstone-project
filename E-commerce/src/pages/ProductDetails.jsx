@@ -25,7 +25,7 @@ export default function ProductDetails (){
         <div className="Inventory2">
             <div className="sec1">
                 <h2>{title}</h2>
-                <img src={image} alt={title} style={{ maxWidth: "450px" }} className="image"/>
+                <p><img src={image} alt={title} style={{ maxWidth: "450px" }} className="image"/></p>
 
                 <button style={{ maxWidth: "100px" }}> Add to Cart</button>
             </div>
@@ -43,7 +43,6 @@ export default function ProductDetails (){
                 </div>
         
             
-                
     
         </div>
     )

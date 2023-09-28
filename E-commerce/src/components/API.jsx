@@ -25,3 +25,29 @@ export const fetchProductDetails = async(id)=>{
         console.log(error);
     }
 }
+export const loginUser = async(username,password)=>{
+    try{
+        const response = await fetch('https://fakestoreapi.com/auth/login',{
+            method:'POST',
+            headers: {
+                'Content-Type': 'application/json',
+              },
+            body:JSON.stringify({
+                
+                username,
+                password
+            }),
+            
+        })
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const result = await response.json();
+        console.log(result.token);
+        return result.token;
+    }
+    catch(error){
+        console.log(Error);
+    }
+}
+

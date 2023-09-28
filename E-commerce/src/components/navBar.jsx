@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom"
 import "../css_styling/navBar.css"
-export default function NavBar(){
+export default function NavBar({setToken, token}){
+    function logout(){
+        setToken(null);
+        localStorage.removeItem('token');
+    }
+
     return(
     <>
     <div className="H1">
@@ -11,7 +16,10 @@ export default function NavBar(){
     </div>
         <nav>
             <ul className="Nav">
+                {token && <li><Link to="/" onClick={logout}> Logout </Link></li> }
                 <li className="nav1"> <Link to="/">Home</Link> </li>
+                {!token &&<li className="nav1"> <Link to="/login">Login</Link> </li>}
+
                 <li className="nav1"> <a>Cart</a> </li>
             </ul>
         </nav>
