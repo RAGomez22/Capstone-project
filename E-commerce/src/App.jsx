@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import {Routes, Route} from 'react-router-dom'
 import NavBar from './components/navBar.jsx';
-import Home from './pages/homepage';
 import ProductDetails from './pages/ProductDetails';
 import GetInventory from './components/GetInventory.jsx';
 import Login from './pages/login.jsx';
