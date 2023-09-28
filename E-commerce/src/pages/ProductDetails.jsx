@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { fetchProductDetails } from "../components/API";
 import "../css_styling/productDetails.css"
 
-export default function ProductDetails (){
+export default function ProductDetails ({addToCart}){
 
     const {id} = useParams(); 
 
@@ -19,15 +19,26 @@ export default function ProductDetails (){
         fetchData();
       },[id]);
 
-      const {title,image, price, description, rating }=productDetails;
+      const {title,image, price, description, rating}=productDetails;
+
+      const product = {
+        id: {id}, 
+        image: {image},
+        name: {title},
+        price: {price}
+      };
+
+      const handleAddToCart=()=>{
+        addToCart(product);
+      }
     return (
 
         <div className="Inventory2">
+
             <div className="sec1">
                 <h2>{title}</h2>
                 <p><img src={image} alt={title} style={{ maxWidth: "450px" }} className="image"/></p>
 
-                <button style={{ maxWidth: "100px" }}> Add to Cart</button>
             </div>
 
             <div className="sec2">
@@ -40,6 +51,9 @@ export default function ProductDetails (){
                  {rating &&
                  <div className="rate">  {rating.count} ratings</div>
                  }
+                <button style={{ maxWidth: "100px" }} onClick={handleAddToCart}> Add to Cart</button>
+
+
                 </div>
         
             
