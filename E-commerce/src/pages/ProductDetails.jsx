@@ -28,9 +28,11 @@ export default function ProductDetails ({addToCart}){
         price: {price}
       };
 
-      const handleAddToCart=()=>{
-        addToCart(product);
-      }
+      //const handleAddToCart=()=>{
+      //  addToCart(product);
+      //  const updatedCart = JSON.stringify([...cart, product]);
+        //localStorage.setItem('cart', updatedCart);
+      //}
     return (
 
         <div className="Inventory2">
@@ -50,8 +52,8 @@ export default function ProductDetails ({addToCart}){
                  }
                  {rating &&
                  <div className="rate">  {rating.count} ratings</div>
-                 }
-                <button style={{ maxWidth: "100px" }} onClick={handleAddToCart}> Add to Cart</button>
+                }
+               
 
 
                 </div>
@@ -63,3 +65,5 @@ export default function ProductDetails ({addToCart}){
     
 
 }
+//<button style={{ maxWidth: "100px" }}onClick={handleAddToCart} > Add to Cart</button>
+//button removed because it was buggy

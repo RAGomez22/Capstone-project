@@ -7,7 +7,11 @@ import Login from './pages/login.jsx';
 import CartPage from './pages/cart.jsx';
 function App() {
   //sets State for cart in app so it can persist troughout app
-  const [cart,setCart]=useState([]);
+  const [cart,setCart]=useState(()=>{  
+    const savedCart = localStorage.getItem('cart');
+  return savedCart ? JSON.parse(savedCart) : []});
+ 
+
 
   const addToCart=(item)=>{
     //findIndex searched for an item in cart array with the same id as the item being added 
@@ -20,13 +24,17 @@ function App() {
       const updatedCart = [...cart];
       updatedCart[itemIndex].quantity += 1;
       setCart(updatedCart);
+      localStorage.setItem('cart', JSON.stringify(cart));
+
     } else {
       setCart([...cart, { ...item, quantity: 1 }]);
     }
   };
+
   const removeProduct=(product)=>{
     const updatedCart = cart.filter((item)=>item.id !== product);
     setCart(updatedCart); 
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
   }
 
   //sets state for token so it can give certain users specific fucntionality
@@ -39,7 +47,7 @@ function App() {
       
 
       <Routes>
-        <Route path="/" element ={<GetInventory addToCart={addToCart} />} />
+        <Route path="/" element ={<GetInventory addToCart={addToCart} removeProduct={removeProduct}/>} />
         <Route path= '/product/:id' element ={<ProductDetails addToCart={addToCart}/>}/>
         <Route path="/login" element ={<Login setToken={setToken}/>} />
         <Route path="/cart" element ={<CartPage cart={cart} setToken={setToken}/>} />

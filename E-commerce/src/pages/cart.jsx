@@ -6,6 +6,7 @@ export default function CartPage ({cart}){
         const index = findRepeats.findIndex((rItem) => rItem.id === item.id);
     
         if (index !== -1) {
+            const updatedCart = [...cart];
             findRepeats[index].quantity += item.quantity;
         } else {
           findRepeats.push({ ...item });

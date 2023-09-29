@@ -3,9 +3,10 @@ import { fetchInventory } from "./API";
 import { Link } from 'react-router-dom';
 import "../css_styling/GetInventoryStyling.css";
 
-export default function GetInventory ({addToCart}) {
+export default function GetInventory ({addToCart,removeProduct}) {
 //usestate set to array 
-    const [inventory, setInventory] = useState([])
+    const [inventory, setInventory] = useState([]);
+    const [category,setSelectedCategory]=useState([]);
 
     //api route isn't defined so inventory is used to pull out information
     
@@ -22,8 +23,16 @@ export default function GetInventory ({addToCart}) {
       //at the specific map, send data to cart
     const handleAddToCart=(item)=>{
         addToCart(item);
+        const updatedCart = JSON.stringify([...cart, product]);
+        localStorage.setItem('cart', updatedCart);
     };
 
+
+    const handleRemoveProduct = (item) => {
+        removeProduct(item.id);
+        const updatedCart = JSON.stringify([...cart, product]);
+        localStorage.setItem('cart', updatedCart);
+    };
     
 
     return (
@@ -31,7 +40,7 @@ export default function GetInventory ({addToCart}) {
         <div >
             {inventory.length > 0 && (
                 <ul className="Inventory">
-                    {inventory.map(({id,image, price, title}) => (
+                    {inventory.map(({id,image, price, title, quantity}) => (
                 
                       <li className ="Inventory" key={id} > 
                         <Link to ={`/product/${id}`}>  
@@ -40,8 +49,9 @@ export default function GetInventory ({addToCart}) {
                                 <p> {title} </p> 
                             </div>     
                         </Link>
-                        <button className="homeButtons" onClick={()=> handleAddToCart({ id,title, image, price})}>Add to Cart</button>
                         
+                        <button className="homeButtons" onClick={()=> handleAddToCart({ id,title, image, price, quantity})}>Add to Cart </button>
+                        <button className="homeButtons" onClick={()=> handleRemoveProduct({ id,title, image, price, quantity})}>Remove Item</button>
                     </li>
                     ))}
                 </ul>
@@ -49,4 +59,4 @@ export default function GetInventory ({addToCart}) {
         </div>
     </div>
     );
-}//onClick={()=> handleAddToCart({ id,title, image, price}, e)} was removed because of buggy code 
+}
